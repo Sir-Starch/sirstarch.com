@@ -228,13 +228,18 @@ const ACH = [
   ['mouse', '🐭', 'Pest control', 'Poked the cellar mouse. The Duke pretends he never met it.'],
 ];
 const got = new Set(store.get('ach', []));
+// a phone has no arrow keys, so the Konami code can't be typed there; unsafe { } is PC-only on touch screens
+const phone = matchMedia('(hover: none) and (pointer: coarse)').matches;
+const PC_ONLY = new Set(['unsafe']);
+const onThisDevice = a => !(phone && PC_ONLY.has(a[0]));
 function renderTrophies() {
-  $('#trophy-count').textContent = `${got.size}/${ACH.length}`;
+  const mine = ACH.filter(onThisDevice);
+  $('#trophy-count').textContent = `${mine.filter(a => got.has(a[0])).length}/${mine.length}`;
   const ul = $('#trophy-list'); ul.textContent = '';
   for (const a of ACH) {
-    const has = got.has(a[0]), li = el('li', has ? 'got' : '');
+    const has = got.has(a[0]), pcOnly = !onThisDevice(a), li = el('li', has ? 'got' : pcOnly ? 'pc' : '');
     const tx = el('div');
-    tx.append(el('b', '', has ? a[2] : '???'), el('span', 'd', has ? a[3] : 'Locked. Keep poking around.'));
+    tx.append(el('b', '', has ? a[2] : '???'), el('span', 'd', has ? a[3] : pcOnly ? 'PC-only' : 'Locked. Keep poking around.'));
     li.append(el('span', 'ic', a[1]), tx); ul.append(li);
   }
 }

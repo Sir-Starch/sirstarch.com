@@ -660,7 +660,8 @@ button{font:inherit;color:inherit;cursor:pointer}
   .bottle .label{inset:5px;top:5px;padding:.15rem}
   .bottle .label small{display:none}
   .bottle .label{align-content:center}
-  .c-floor,.c-wanted,.c-shelf,.c-chalk,.c-table,.c-hole{display:none}
+  .c-floor,.c-wanted,.c-shelf,.c-chalk,.c-table{display:none}
+  .c-hole{left:auto;right:.5rem;bottom:calc(var(--hud-bot) + 2.2rem)}   /* on touch screens the hole sits off to the right; keep it reachable (Pest control) */
   .c-kin{top:calc(var(--hud-top) + .2rem + var(--H) * var(--f4) + 5.6em);gap:1.4em;font-size:.74em}
 }
 @media (max-width:820px) and (max-height:780px),(max-aspect-ratio:4/5) and (max-height:780px){.c-kin{display:none}}
@@ -739,6 +740,8 @@ button{font:inherit;color:inherit;cursor:pointer}
 #trophy-panel b{display:block;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
 #trophy-panel .d{color:var(--muted);font-style:italic;font-size:.8rem}
 #trophy-panel li.got .ic{filter:none}
+#trophy-panel li.pc{opacity:.6}
+#trophy-panel li.pc .d{font-style:normal;font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
 #trophy-panel li.got b{color:var(--gold-hi)}
 .float{position:fixed;z-index:160;pointer-events:none;font-family:var(--mono);font-weight:800;color:var(--gold-hi);text-shadow:0 0 12px var(--gold),0 2px 0 #000;animation:floatup 1s var(--ease) forwards;white-space:nowrap}
 @keyframes floatup{from{transform:translate(-50%,0) scale(.7);opacity:1}to{transform:translate(-50%,-90px) scale(1.4);opacity:0}}
