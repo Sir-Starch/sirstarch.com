@@ -198,7 +198,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .w-btns{display:flex;gap:7px}
 .w-btns i{width:12px;height:12px;border-radius:50%;background:#4a3a28}
 .w-btns i:last-child{background:var(--gold)}
-.w-kitty{background:#0b0809;z-index:30}
+.w-kitty{background:#0b0809}
 .w-port{position:relative;width:calc(var(--W) * var(--fk,.34));height:calc(var(--H) * var(--fk,.34));background:#0b0809}
 
 .w-pc{container-type:inline-size;--pb:#1b120e;--pb2:#130b09;--pln:rgba(232,195,106,.14);--ptx:#e6d8ba;--pdm:#a08e6e;--psel:rgba(232,195,106,.17);
@@ -288,7 +288,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 @container (max-width:840px){.pc-docname{visibility:hidden}}
 @media (max-height:780px){.ly-lock,.ly-kind{display:none}.pp-btn{display:none}.pp-body{padding-bottom:8px}}
 
-.d-panel{position:absolute;left:0;right:0;bottom:0;height:44px;display:flex;align-items:center;gap:.4rem;padding:0 .7rem;font-size:12px;color:#d9c49a;
+.d-panel{position:absolute;left:0;right:0;bottom:0;height:44px;display:flex;align-items:center;gap:.4rem;padding:0 .7rem;font-size:12px;color:#d9c49a;z-index:500;
   background:rgba(14,7,8,.92);border-top:1px solid rgba(232,195,106,.25);box-shadow:0 -10px 30px rgba(0,0,0,.4)}
 .dp-start{display:grid;place-items:center;width:32px;height:32px;border-radius:8px;font-family:var(--emoji);font-size:18px;background:rgba(232,195,106,.12)}
 .dp-task{padding:.3rem .7rem;border-radius:6px;border-bottom:2px solid transparent}
