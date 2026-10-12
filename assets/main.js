@@ -773,11 +773,13 @@ const Desk = (() => {
   }
   function drag() {
     let cur = null, ox = 0, oy = 0, zTop = 40;
+    // every window stacks by focus, kitty included; the desk panel sits above all of them (CSS)
+    const raise = win => { win.style.zIndex = ++zTop; };
+    $$('#L1 .win').forEach(win => { raise(win); win.addEventListener('pointerdown', () => raise(win)); });
     $$('#L1 [data-drag]').forEach(bar => {
       bar.addEventListener('pointerdown', e => {
         const win = bar.closest('.win');
         cur = win; ox = e.clientX - win.offsetLeft; oy = e.clientY - win.offsetTop;
-        if (!win.classList.contains('w-kitty')) win.style.zIndex = ++zTop; // kitty stays on top: it's a window into another world
         bar.setPointerCapture(e.pointerId); e.preventDefault();
       });
       bar.addEventListener('pointermove', e => {
