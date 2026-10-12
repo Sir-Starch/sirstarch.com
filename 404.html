@@ -3,44 +3,85 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>404 — Potato Not Found | Sir Starch</title>
+<title>Page not found · Sir Starch</title>
+<meta name="description" content="This page does not exist. Here are the rooms of Sir Starch's site that do.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0b0708">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sir Starch">
+<meta property="og:title" content="Page not found · Sir Starch">
+<meta property="og:description" content="The potato ate this page. Here are the rooms that still exist.">
+<meta property="og:image" content="https://sirstarch.com/assets/og.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/style.css">
 <style>
-  body{display:grid;place-items:center;min-height:100svh;padding:1.5rem;background:radial-gradient(ellipse at 50% 30%,#2a0f17,#0b0708 70%)}
-  .box{width:min(720px,100%);text-align:center}
-  .big{font-family:var(--display);font-weight:900;font-size:clamp(5rem,26vw,11rem);line-height:.9;margin:0;filter:drop-shadow(0 6px 0 rgba(0,0,0,.6)) drop-shadow(0 0 40px rgba(232,195,106,.25))}
-  .big .g{color:transparent;background:linear-gradient(180deg,var(--gold-hi),var(--gold) 55%,var(--gold-lo));-webkit-background-clip:text;background-clip:text}
-  .big i{font-style:normal;display:inline-block;font-family:var(--emoji);font-size:.8em;animation:roll 3s ease-in-out infinite}
-  @keyframes roll{50%{transform:rotate(20deg) translateY(-6px)}}
   html,body{height:auto;overflow:auto}
-  /* the 404 has its own little Konsole window (the main site's .win is positioned for the desktop scene) */
-  .win{position:relative;text-align:left;margin:2rem 0 1.6rem;border:1px solid rgba(232,195,106,.34);border-radius:10px;overflow:hidden;background:rgba(8,5,6,.9);box-shadow:0 30px 80px -20px rgba(0,0,0,.85)}
-  .win-bar{display:flex;align-items:center;gap:.6rem;padding:.5rem .8rem;border-bottom:1px solid rgba(232,195,106,.2);background:linear-gradient(180deg,#2a1a1d,#1a0f11);font:.72rem var(--mono);color:var(--muted)}
-  .win-bar .t{flex:1;text-align:center}.win-bar .l,.win-bar .r{display:flex;gap:6px;width:3.4rem}
-  .win-bar .l i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.win-bar .l i+i{background:#febc2e}.win-bar .l i+i+i{background:#28c840}
-  .code{margin:0;padding:1.2rem;font:clamp(.7rem,1.6vw,.85rem)/1.6 var(--mono);color:#d8d0c0;white-space:pre-wrap;overflow-wrap:anywhere}
-  .code .err,.code .caret-r{color:#ff5470;font-weight:800}.code .arrow{color:var(--blue);font-weight:700}.code .help,.code .ok{color:var(--green);font-weight:800}
+  body{display:grid;place-items:center;min-height:100svh;padding:1.5rem;background:radial-gradient(ellipse at 50% 30%,#2a0f17,#0b0708 70%)}
+  .box{width:min(640px,100%);text-align:center;padding-block:1rem}
+  .big{display:flex;align-items:center;justify-content:center;gap:.2em;margin:0;font-family:var(--display);font-weight:900;font-size:clamp(4.5rem,22vw,9.5rem);line-height:1}
+  .big .g{color:transparent;background:linear-gradient(180deg,var(--gold-hi),var(--gold) 55%,var(--gold-lo));-webkit-background-clip:text;background-clip:text}
+  .big svg{width:.95em;height:.95em;flex:none;animation:bob 3.4s ease-in-out infinite;transform-origin:50% 100%}
+  @keyframes bob{50%{transform:rotate(-6deg) translateY(-4px)}}
+  @media (prefers-reduced-motion:reduce){.big svg{animation:none}}
+  .lede{margin:.4rem 0 .2rem;font-size:1.25rem;color:var(--text)}
   p.s{color:var(--muted);font-style:italic;margin:0 0 1.4rem}
+  .win{position:relative;text-align:left;margin:1.4rem 0 1.6rem;border:1px solid rgba(232,195,106,.34);border-radius:10px;overflow:hidden;background:rgba(8,5,6,.9);box-shadow:0 30px 80px -20px rgba(0,0,0,.85)}
+  .win-bar{display:flex;align-items:center;gap:.6rem;padding:.5rem .8rem;border-bottom:1px solid rgba(232,195,106,.2);background:linear-gradient(180deg,#2a1a1d,#1a0f11);font:.72rem var(--mono);color:var(--muted)}
+  .win-bar .t{flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .win-bar .l{display:flex;gap:6px;width:3.4rem}
+  .win-bar .l i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.win-bar .l i+i{background:#febc2e}.win-bar .l i+i+i{background:#28c840}
+  .code{margin:0;padding:1.1rem 1.2rem;font:clamp(.72rem,1.6vw,.85rem)/1.6 var(--mono);color:#d8d0c0;white-space:pre-wrap;overflow-wrap:anywhere}
+  .code .err{color:#ff5470;font-weight:800}.code .arrow{color:var(--blue);font-weight:700}.code .help{color:var(--green);font-weight:800}.code .ok{color:var(--gold)}
+  .rooms{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:.6rem;margin:0 0 1.4rem;padding:0;list-style:none;text-align:left}
+  .rooms a{display:flex;align-items:center;gap:.7rem;padding:.7rem .85rem;border:1px solid rgba(232,195,106,.24);border-radius:8px;background:rgba(232,195,106,.04);color:var(--text);text-decoration:none;transition:background .2s,border-color .2s}
+  .rooms a:hover,.rooms a:focus-visible{background:rgba(232,195,106,.14);border-color:var(--gold)}
+  .rooms b{display:grid;place-items:center;flex:none;width:2.1rem;height:2.1rem;border-radius:50%;border:1px solid var(--gold-lo);font:900 .7rem var(--display);color:var(--gold)}
+  .rooms span{display:grid;line-height:1.25}
+  .rooms small{font:.7rem var(--mono);color:var(--muted)}
+  .out{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin:0 0 1.6rem;font:.8rem var(--mono)}
+  .out a{color:var(--gold);padding:.2rem .1rem;border-bottom:1px dashed rgba(232,195,106,.45);text-decoration:none}
+  .out a:hover{color:var(--gold-hi);border-bottom-color:var(--gold-hi)}
+  .out i{color:var(--muted);font-style:normal}
+  @media (max-width:480px){
+    .win-bar .t{font-size:.66rem}
+    .code{font-size:.7rem}
+  }
 </style>
 </head>
 <body>
-  <div class="box">
-    <h1 class="big"><span class="g">4</span><i>🥔</i><span class="g">4</span></h1>
-    <p class="s">This potato has been eaten. Or never existed. The Duke is not available for comment.</p>
+  <main class="box">
+    <h1 class="big" aria-label="404, page not found"><span class="g" aria-hidden="true">4</span><svg viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="38" rx="19" ry="16" fill="#d6a85c"/><ellipse cx="25" cy="33" rx="2" ry="1.4" fill="#a87a24"/><ellipse cx="40" cy="45" rx="2.2" ry="1.5" fill="#a87a24"/><rect x="21" y="9" width="22" height="15" rx="2" fill="#1a1012" stroke="#e8c36a" stroke-width="1.5"/><rect x="21" y="19" width="22" height="3.5" fill="#6b1226"/><rect x="16" y="23" width="32" height="4" rx="2" fill="#1a1012" stroke="#e8c36a" stroke-width="1.5"/><circle cx="40" cy="35" r="5" fill="none" stroke="#e8c36a" stroke-width="1.6"/><circle cx="24.5" cy="35" r="1.6" fill="#1a1012"/><circle cx="40" cy="35" r="1.6" fill="#1a1012"/><path d="M21 44c4-3 8 0 11 0s7-3 11 0c-3 4-8 2-11 2s-8 2-11-2z" fill="#1a1012"/></svg><span class="g" aria-hidden="true">4</span></h1>
+
+    <p class="lede">There is no page at this address.</p>
+    <p class="s">The potato ate it. Or it never existed. The Duke is not available for comment.</p>
+
     <div class="win">
-      <div class="win-bar"><span class="l"><i></i><i></i><i></i></span><span class="t">cargo build — sirstarch.com</span><span class="r"></span></div>
+      <div class="win-bar"><span class="l"><i></i><i></i><i></i></span><span class="t">cargo build</span><span class="r" style="width:3.4rem"></span></div>
 <pre class="code"><span class="err">error[E0425]</span>: cannot find page <span class="err" id="p">`/this-page`</span> in this scope
   <span class="arrow">--&gt;</span> sirstarch.com/<span id="p2">this-page</span>
    <span class="arrow">|</span>
-   <span class="arrow">|</span> <span class="caret-r">^^^^^^^^^^^^^^</span> not found in the Root Cellar
+   <span class="arrow">|</span> not found in the Root Cellar
    <span class="arrow">|</span>
-<span class="help">help</span>: a page with a similar name exists: <span class="ok">`/`</span> (it has a top hat)</pre>
+<span class="help">help</span>: these rooms exist, pick one:</pre>
     </div>
+
+    <ul class="rooms">
+      <li><a href="/"><b>I</b><span>The Portrait<small>/</small></span></a></li>
+      <li><a href="/#reflection"><b>II</b><span>The Reflection<small>/#reflection</small></span></a></li>
+      <li><a href="/#kitty"><b>III</b><span>kitty<small>/#kitty</small></span></a></li>
+      <li><a href="/#pi"><b>IV</b><span>The π Sea<small>/#pi</small></span></a></li>
+      <li><a href="/#cellar"><b>V</b><span>The Root Cellar<small>/#cellar</small></span></a></li>
+    </ul>
+
+    <p class="out">
+      <a href="https://github.com/Sir-Starch" rel="noopener">GitHub</a><i>·</i>
+      <a href="https://github.com/Sir-Starch/pi-casso" rel="noopener">pi-casso</a><i>·</i>
+      <a href="https://github.com/Sir-Starch/Causafera" rel="noopener">Causafera</a><i>·</i>
+      <a href="https://www.tiktok.com/@sirstarch" rel="noopener">TikTok</a>
+    </p>
+
     <a class="btn btn-gold" href="/">← Back to the Duke</a>
-  </div>
+  </main>
   <script>
     (function(){try{var p=location.pathname.replace(/^\/+/,'')||'this-page';
       document.getElementById('p').textContent='`/'+p+'`';document.getElementById('p2').textContent=p;}catch(e){}})();
